@@ -33,7 +33,7 @@ namespace DuckTalesRemasteredPSN
                 else if (IO.Length == 0x410)
                 {
                     IO.Offset = 0x19;
-                    comboBox1.SelectedItem = (string)Difficulty((byte)IO.ReadByte(), false);
+                    cbDifficulty.SelectedItem = (string)Difficulty((byte)IO.ReadByte(), false);
                 }
             }
         }
@@ -78,7 +78,7 @@ namespace DuckTalesRemasteredPSN
         private void btnSave_Click(object sender, EventArgs e)
         {
             IO.Offset = 0x19;
-            IO.Write((byte)Difficulty((string)comboBox1.SelectedItem.ToString(), true));
+            IO.Write((byte)Difficulty((string)cbDifficulty.SelectedItem.ToString(), true));
             IO.Offset = 0x10;
             byte[] buffer = IO.ReadBytes(0x400);
             ulong hash = DuckTales.Compute(buffer);

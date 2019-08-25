@@ -32,7 +32,7 @@
             this.btnLoad = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbDifficulty = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +58,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cbDifficulty);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 39);
             this.groupBox1.Name = "groupBox1";
@@ -76,17 +76,17 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Difficulty -";
             // 
-            // comboBox1
+            // cbDifficulty
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbDifficulty.FormattingEnabled = true;
+            this.cbDifficulty.Items.AddRange(new object[] {
             "Easy",
             "Medium",
             "Hard"});
-            this.comboBox1.Location = new System.Drawing.Point(66, 19);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(67, 21);
-            this.comboBox1.TabIndex = 3;
+            this.cbDifficulty.Location = new System.Drawing.Point(66, 19);
+            this.cbDifficulty.Name = "cbDifficulty";
+            this.cbDifficulty.Size = new System.Drawing.Size(67, 21);
+            this.cbDifficulty.TabIndex = 3;
             // 
             // Main
             // 
@@ -112,7 +112,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbDifficulty;
         private System.Windows.Forms.Label label1;
     }
 }
