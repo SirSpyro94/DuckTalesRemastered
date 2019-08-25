@@ -31,14 +31,14 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnLoad = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtMoney = new System.Windows.Forms.TextBox();
-            this.btnMax = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(108, 10);
+            this.btnSave.Location = new System.Drawing.Point(93, 10);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 13;
@@ -48,7 +48,7 @@
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(27, 10);
+            this.btnLoad.Location = new System.Drawing.Point(12, 10);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(75, 23);
             this.btnLoad.TabIndex = 12;
@@ -58,37 +58,41 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnMax);
-            this.groupBox1.Controls.Add(this.txtMoney);
-            this.groupBox1.Location = new System.Drawing.Point(11, 39);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 39);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 44);
+            this.groupBox1.Size = new System.Drawing.Size(200, 143);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Money";
+            this.groupBox1.Text = "MoDz";
             // 
-            // txtMoney
+            // label1
             // 
-            this.txtMoney.Location = new System.Drawing.Point(6, 19);
-            this.txtMoney.Name = "txtMoney";
-            this.txtMoney.Size = new System.Drawing.Size(109, 20);
-            this.txtMoney.TabIndex = 0;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Difficulty -";
             // 
-            // btnMax
+            // comboBox1
             // 
-            this.btnMax.Location = new System.Drawing.Point(121, 17);
-            this.btnMax.Name = "btnMax";
-            this.btnMax.Size = new System.Drawing.Size(75, 23);
-            this.btnMax.TabIndex = 1;
-            this.btnMax.Text = "Max";
-            this.btnMax.UseVisualStyleBackColor = true;
-            this.btnMax.Click += new System.EventHandler(this.btnMax_Click);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Easy",
+            "Medium",
+            "Hard"});
+            this.comboBox1.Location = new System.Drawing.Point(66, 19);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(67, 21);
+            this.comboBox1.TabIndex = 3;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(222, 92);
+            this.ClientSize = new System.Drawing.Size(572, 305);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnLoad);
@@ -108,8 +112,8 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnMax;
-        private System.Windows.Forms.TextBox txtMoney;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
