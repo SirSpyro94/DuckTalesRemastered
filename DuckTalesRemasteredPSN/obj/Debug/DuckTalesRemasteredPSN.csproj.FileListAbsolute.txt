@@ -1,1 +1,10 @@
 C:\Users\Mike\Documents\GitHub\DuckTalesRemasteredPSN\DuckTalesRemasteredPSN\DuckTalesRemasteredPSN\bin\Debug\DuckTalesRemasteredPSN.exe.config
+C:\Users\Mike\Documents\GitHub\DuckTalesRemasteredPSN\DuckTalesRemasteredPSN\bin\Debug\DuckTalesRemasteredPSN.exe.config
+C:\Users\Mike\Documents\GitHub\DuckTalesRemasteredPSN\DuckTalesRemasteredPSN\bin\Debug\DuckTalesRemasteredPSN.exe
+C:\Users\Mike\Documents\GitHub\DuckTalesRemasteredPSN\DuckTalesRemasteredPSN\bin\Debug\DuckTalesRemasteredPSN.pdb
+C:\Users\Mike\Documents\GitHub\DuckTalesRemasteredPSN\DuckTalesRemasteredPSN\obj\Debug\DuckTalesRemasteredPSN.csprojResolveAssemblyReference.cache
+C:\Users\Mike\Documents\GitHub\DuckTalesRemasteredPSN\DuckTalesRemasteredPSN\obj\Debug\DuckTalesRemasteredPSN.Main.resources
+C:\Users\Mike\Documents\GitHub\DuckTalesRemasteredPSN\DuckTalesRemasteredPSN\obj\Debug\DuckTalesRemasteredPSN.Properties.Resources.resources
+C:\Users\Mike\Documents\GitHub\DuckTalesRemasteredPSN\DuckTalesRemasteredPSN\obj\Debug\DuckTalesRemasteredPSN.csproj.GenerateResource.Cache
+C:\Users\Mike\Documents\GitHub\DuckTalesRemasteredPSN\DuckTalesRemasteredPSN\obj\Debug\DuckTalesRemasteredPSN.exe
+C:\Users\Mike\Documents\GitHub\DuckTalesRemasteredPSN\DuckTalesRemasteredPSN\obj\Debug\DuckTalesRemasteredPSN.pdb
