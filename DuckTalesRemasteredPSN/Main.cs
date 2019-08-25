@@ -31,7 +31,9 @@ namespace DuckTalesRemasteredPSN
             Console_Checksum_Count = 0x400,
             Console_Checksum = 0,
             Steam_Difficulty = 0x89,
-            Steam_Total_Money = 0x120,
+            Steam_Total_Money1 = 0x120, 
+            Steam_Total_Money2 = 0x1C8,
+            Steam_Total_Money3 = 0x1F0,
         }
 
         private FileIO IO;
@@ -58,7 +60,7 @@ namespace DuckTalesRemasteredPSN
                     IO.BigEndian = false;
                     IO.Offset = (long)GameOffsets.Steam_Difficulty;
                     cbDifficulty.SelectedItem = (string)Difficulty((byte)IO.ReadByte(), false);
-                    IO.Offset = (long)GameOffsets.Steam_Total_Money;
+                    IO.Offset = (long)GameOffsets.Steam_Total_Money1;
                     txtTMoney.Text = IO.ReadInt32().ToString();
                     Version = GameVersion.Steam;
                 }
@@ -106,9 +108,13 @@ namespace DuckTalesRemasteredPSN
         {
             if (Version == GameVersion.Steam)
             {
-                IO.Offset = (long)GameOffsets.Steam_Total_Money;
+                IO.Offset = (long)GameOffsets.Steam_Difficulty;
                 IO.Write((byte)Difficulty((string)cbDifficulty.SelectedItem.ToString(), true));
-                IO.Offset = (long)GameOffsets.Steam_Total_Money;
+                IO.Offset = (long)GameOffsets.Steam_Total_Money1;
+                IO.Write((uint)uint.Parse(txtTMoney.Text));
+                IO.Offset = (long)GameOffsets.Steam_Total_Money2;
+                IO.Write((uint)uint.Parse(txtTMoney.Text));
+                IO.Offset = (long)GameOffsets.Steam_Total_Money3;
                 IO.Write((uint)uint.Parse(txtTMoney.Text));
             }
             else if (Version == GameVersion.Console)
