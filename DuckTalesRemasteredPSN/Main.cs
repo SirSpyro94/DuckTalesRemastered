@@ -18,7 +18,23 @@ namespace DuckTalesRemasteredPSN
             InitializeComponent();
         }
 
+        public enum GameVersion
+        {
+            Steam,
+            Console
+        }
+
+        public enum GameOffsets : long
+        {
+            Console_Difficulty = 0x19,
+            Console_Checksum_Start = 0x10,
+            Console_Checksum_Count = 0x400,
+            Console_Checksum = 0,
+            Steam_Difficulty = 0x89,
+        }
+
         private FileIO IO;
+        private GameVersion Version;
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
@@ -30,10 +46,17 @@ namespace DuckTalesRemasteredPSN
                     MessageBox.Show("Unsupported Version");
                     return;
                 }
-                else if (IO.Length == 0x410)
+                else if (IO.Length == 0x410 || IO.Length == 0x410)
                 {
-                    IO.Offset = 0x19;
+                    IO.Offset = (long)GameOffsets.Console_Difficulty;
                     cbDifficulty.SelectedItem = (string)Difficulty((byte)IO.ReadByte(), false);
+                    Version = GameVersion.Console;
+                }
+                else if (IO.Length == 0x480)
+                {
+                    IO.Offset = (long)GameOffsets.Steam_Difficulty;
+                    cbDifficulty.SelectedItem = (string)Difficulty((byte)IO.ReadByte(), false);
+                    Version = GameVersion.Steam;
                 }
             }
         }
@@ -77,13 +100,21 @@ namespace DuckTalesRemasteredPSN
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            IO.Offset = 0x19;
-            IO.Write((byte)Difficulty((string)cbDifficulty.SelectedItem.ToString(), true));
-            IO.Offset = 0x10;
-            byte[] buffer = IO.ReadBytes(0x400);
-            ulong hash = DuckTales.Compute(buffer);
-            IO.Offset = 0;
-            IO.Write((ulong)hash);
+            if (Version == GameVersion.Steam)
+            {
+                IO.Offset = (long)GameOffsets.Steam_Difficulty;
+                IO.Write((byte)Difficulty((string)cbDifficulty.SelectedItem.ToString(), true));
+            }
+            else if (Version == GameVersion.Console)
+            {
+                IO.Offset = (long)GameOffsets.Console_Difficulty;
+                IO.Write((byte)Difficulty((string)cbDifficulty.SelectedItem.ToString(), true));
+                IO.Offset = (long)GameOffsets.Console_Checksum_Start;
+                byte[] buffer = IO.ReadBytes((int)GameOffsets.Console_Checksum_Count);
+                ulong hash = DuckTales.Compute(buffer);
+                IO.Offset = (long)GameOffsets.Console_Checksum;
+                IO.Write((ulong)hash);
+            }
             IO.Close();
             MessageBox.Show("Saved!");
         }
