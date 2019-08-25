@@ -33,6 +33,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cbDifficulty = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtTMoney = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +60,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtTMoney);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.cbDifficulty);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 39);
@@ -88,6 +92,22 @@
             this.cbDifficulty.Size = new System.Drawing.Size(67, 21);
             this.cbDifficulty.TabIndex = 3;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Total Money -";
+            // 
+            // txtTMoney
+            // 
+            this.txtTMoney.Location = new System.Drawing.Point(85, 46);
+            this.txtTMoney.Name = "txtTMoney";
+            this.txtTMoney.Size = new System.Drawing.Size(80, 20);
+            this.txtTMoney.TabIndex = 5;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -114,6 +134,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cbDifficulty;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtTMoney;
+        private System.Windows.Forms.Label label2;
     }
 }
 
