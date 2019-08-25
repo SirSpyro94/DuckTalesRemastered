@@ -46,7 +46,7 @@ namespace DuckTalesRemasteredPSN
                     MessageBox.Show("Unsupported Version");
                     return;
                 }
-                else if (IO.Length == 0x410 || IO.Length == 0x410)
+                else if (IO.Length == 0x410)
                 {
                     IO.Offset = (long)GameOffsets.Console_Difficulty;
                     cbDifficulty.SelectedItem = (string)Difficulty((byte)IO.ReadByte(), false);
