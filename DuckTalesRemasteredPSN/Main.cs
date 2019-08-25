@@ -22,11 +22,19 @@ namespace DuckTalesRemasteredPSN
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            IO = FileIO.OpenIO("Open File", "|savedata.sav", true);
+            IO = FileIO.OpenIO("Open File", "", true);
             if (IO != null)
             {
-                IO.Offset = 0x19;
-                comboBox1.SelectedItem = (string)Difficulty((byte)IO.ReadByte(), false);
+                if (IO.Length == 0x440)
+                {
+                    MessageBox.Show("Unsupported Version");
+                    return;
+                }
+                else if (IO.Length == 0x410)
+                {
+                    IO.Offset = 0x19;
+                    comboBox1.SelectedItem = (string)Difficulty((byte)IO.ReadByte(), false);
+                }
             }
         }
 
@@ -71,7 +79,7 @@ namespace DuckTalesRemasteredPSN
         {
             IO.Offset = 0x19;
             IO.Write((byte)Difficulty((string)comboBox1.SelectedItem.ToString(), true));
-            IO.Offset = 16;
+            IO.Offset = 0x10;
             byte[] buffer = IO.ReadBytes(0x400);
             ulong hash = DuckTales.Compute(buffer);
             IO.Offset = 0;
