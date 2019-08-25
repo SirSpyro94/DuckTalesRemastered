@@ -102,6 +102,7 @@ namespace DuckTalesRemasteredPSN
                         cbTVShow2.Checked = true;
                     Version = GameVersion.Steam;
                 }
+                Text = string.Format("DuckTales Remastered - Save [{0}]", Version.ToString());
             }
         }
 
